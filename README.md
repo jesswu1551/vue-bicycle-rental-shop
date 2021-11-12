@@ -1,4 +1,15 @@
-# bicycle_rental_shop
+# Getting Start
+
+## Install
+```
+$ npm install vue
+$ npm install -g @vue/cli
+```
+
+## To create a new project
+```
+$ vue create project_name
+```
 
 ## Project setup
 ```
