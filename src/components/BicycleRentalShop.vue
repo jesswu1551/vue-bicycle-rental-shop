@@ -16,6 +16,13 @@
       <p class="text-error" v-else>No bike is available.</p>
     </div>
 
+    <div class="rule-section">
+      <h3>Rules</h3>
+      <ol>
+        <li v-for="(rule, index) in rules" :key="index">{{ rule }}</li>
+      </ol>
+    </div>
+
   </div>
 </template>
 
@@ -26,6 +33,7 @@ export default {
     return {
       number: 20,
       price: 100,
+      rules: ['💰 $100 each time.', 'Please return no later than 18:00 🕕.', 'Be safe 🙌🏻.'],
     }
   },
   computed: {
@@ -54,6 +62,8 @@ export default {
     content: '🚲';
     font-weight: normal;
   }
+
+  li { margin: 4px 0; }
 
   .button-group {
     display: flex;
