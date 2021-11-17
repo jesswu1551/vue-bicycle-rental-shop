@@ -6,9 +6,9 @@
     <!-- <h3>Total income({{ number}} * {{ price }}): {{ subTotal }} $</h3> -->
 
     <div class="button-group">
-      <button @click="addCount()" :disabled="number >= 20 ? true : false">＋</button>
+      <button @click="addCount" :disabled="number >= 20 ? true : false">＋</button>
       <div>{{ number }}</div>
-      <button @click="minusCount()" :disabled="number <= 0 ? true : false">－</button>
+      <button @click="minusCount" :disabled="number <= 0 ? true : false">－</button>
     </div>
 
     <div class="info-msg">
