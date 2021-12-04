@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h3>Total income: $ {{ calcTotal }}</h3>
-    <span>{{ number }} X {{ price }} = $ {{ calcTotal }}</span>
+    <h3>Total income:</h3>
+    <p>{{ price }} X {{ number }} = $ {{ calcTotal }}</p>
+    <button @click="clearTotal">Reset All</button>
   </div>
 </template>
 
@@ -29,6 +30,10 @@ export default {
     },
   },
   methods: {
+    clearTotal: function () {
+      this.$emit('update', 0);
+    },
+
     numberWithCommas: function (num) {
       num = num.toString();
       let pattern = /(-?\d+)(\d{3})/;

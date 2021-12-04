@@ -21,7 +21,7 @@
       </ol>
     </div>
 
-    <TotalIncome :number="number" :price="price"/>
+    <TotalIncome :price="price" :number="addIncome" @update="resetNumber"/>
   </div>
 </template>
 
@@ -38,14 +38,21 @@ export default {
       number: 20,
       price: 100,
       rules: ['💰 $100 each time.', 'Please return no later than 18:00 🕕.', 'Be safe 🙌🏻.'],
+      addIncome: 0,
     }
   },
   methods: {
     addCount: function () {
-      this.number++;
+      this.number += 1;
     },
+
     minusCount: function () {
-      this.number--;
+      this.number -= 1;
+      this.addIncome += 1;
+    },
+
+    resetNumber: function (num) {
+      this.addIncome = num;
     },
   }
 }
