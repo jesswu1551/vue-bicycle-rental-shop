@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h3>Total income:</h3>
+
+    <!-- <h3>Total income:</h3> -->
+    <slot name="totalTitle">Total</slot>
     <p>{{ price }} X {{ number }} = $ {{ calcTotal }}</p>
     <button @click="clearTotal">Reset All</button>
+
   </div>
 </template>
 

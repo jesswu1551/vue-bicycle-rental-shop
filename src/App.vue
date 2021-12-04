@@ -21,7 +21,12 @@
       </ol>
     </div>
 
-    <TotalIncome :price="price" :number="addIncome" @update="resetNumber"/>
+    <!-- <TotalIncome :price="price" :number="addIncome" @update="resetNumber"/> -->
+    <TotalIncome :price="price" :number="addIncome" @update="resetNumber">
+      <template #totalTitle>
+        <h3>{{ title.total }}</h3>
+      </template>
+    </TotalIncome>
   </div>
 </template>
 
@@ -39,6 +44,9 @@ export default {
       price: 100,
       rules: ['💰 $100 each time.', 'Please return no later than 18:00 🕕.', 'Be safe 🙌🏻.'],
       addIncome: 0,
+      title: {
+        total: 'Total Income',
+      }
     }
   },
   methods: {
