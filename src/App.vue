@@ -122,7 +122,7 @@ h2 { display: inline-block; }
   cursor: pointer;
 }
 
-.info-msg { margin-top: 8px; }
+.info-msg { margin-top: 16px; }
 
 .total-body {
   margin-bottom: 16px;
