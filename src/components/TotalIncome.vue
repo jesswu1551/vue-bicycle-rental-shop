@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="section">
 
     <!-- <h3>Total income:</h3> -->
     <slot name="totalTitle">Total</slot>
-    <p>{{ price }} X {{ number }} = $ {{ calcTotal }}</p>
-    <button @click="clearTotal">Reset All</button>
+    <div class="total-body">$ {{ calcTotal }}</div>
+    <!-- <p>{{ price }} X {{ number }}</p> -->
+    <button class="reset-btn" @click="clearTotal">Reset</button>
 
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
   },
   methods: {
     clearTotal: function () {
-      this.$emit('update', 0);
+      this.$emit('update');
     },
 
     numberWithCommas: function (num) {
