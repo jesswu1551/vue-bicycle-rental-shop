@@ -3,7 +3,6 @@
 
     <h1>Bicycle Rental Shop</h1>
     <p>Number of bicycles: {{ number }}</p>
-    <!-- <h3>Total income({{ number}} * {{ price }}): {{ subTotal }} $</h3> -->
 
     <div class="button-group">
       <button @click="addCount" :disabled="number >= 20 ? true : false">＋</button>
@@ -23,22 +22,23 @@
       </ol>
     </div>
 
+    <TotalIncome :number="number" :price="price"/>
   </div>
 </template>
 
 <script>
+import TotalIncome from '../components/TotalIncome.vue'
+
 export default {
   name: 'BicycleRentalShop',
+  components: {
+    TotalIncome,
+  },
   data () {
     return {
       number: 20,
       price: 100,
       rules: ['💰 $100 each time.', 'Please return no later than 18:00 🕕.', 'Be safe 🙌🏻.'],
-    }
-  },
-  computed: {
-    subTotal: function () {
-      return this.number * this.price;
     }
   },
   methods: {
